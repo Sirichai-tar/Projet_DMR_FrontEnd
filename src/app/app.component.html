@@ -1,0 +1,20 @@
+<!-- <div class="container-fluid g-0">
+    <app-navbar (sidebarNarToggled)="sidebarNarStatus = $event;"></app-navbar>
+
+    <main>
+        <app-sidebar-nar [sidebarNarStatus]="sidebarNarStatus" [ngClass]
+        ="{'app-sidebar-nar-open': sidebarNarStatus}"></app-sidebar-nar>
+        <div class="display-area p-3" [ngClass]="
+        {'display-area-shrink':sidebarNarStatus}">
+            <p class="fs-1 fw-bold fst-italic">Main Display Area</p>
+        </div>
+    </main>
+
+   <app-sidebar-nar></app-sidebar-nar>
+</div> -->
+
+<app-main></app-main>
+<router-outlet></router-outlet>
+
+<!-- <app-main></app-main>
+<router-outlet></router-outlet> -->

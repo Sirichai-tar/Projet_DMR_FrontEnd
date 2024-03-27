@@ -1,0 +1,122 @@
+<div class="history-hear">
+    <h1>ประวัติรถยนตร์</h1>
+</div>
+<!-- <div class="search-input">
+    <div class="search">
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">
+                <i class="fa-solid fa-calendar-days fa-flip da-2xl"></i>
+            </span>
+            <input type="text" class="form-control" placeholder="ค้นหาวันเรื่มต้น" aria-label="Username"
+                aria-describedby="addon-wrapping" id="datepicker">
+        </div>
+        <div class="input-group flex-nowrap">
+          
+            <span class="input-group-text" id="addon-wrappinggg">
+                <i class="fa-solid fa-calendar-days fa-flip da-2xl"></i>
+            </span>
+            <input type="text" class="form-control" placeholder="ค้นหาวันสิ้นสุด" aria-label="Username"
+                aria-describedby="addon-wrapping" id="datepicker01">
+        </div>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-warning me-md-2" type="">ค้นหา</button>
+        <button class="btn btn-info me-md-2" type="">รีเซต</button>
+        <div class="vr">|</div>
+        <div class="btn-group btn-group-md" role="group" aria-label="Large button group">
+            <button type="button" class="btn btn-outline-secondary">Excel</button>
+            <button type="button" class="btn btn-outline-secondary">Copy</button>
+        </div>
+    </div>
+</div> -->
+<!-- <div class="downloadfiles">
+        <div class="indownload">
+            <div class="btn-group btn-danger-sm" role="group" aria-label="Large button group">
+                <button type="button" class="btn btn-danger">PDF</button>
+                <button type="button" class="btn btn-warning">Excel</button>
+                <button type="button" class="btn btn-success">Right</button>
+            </div>
+        </div>
+    </div> -->
+
+
+<div class="container d-flex justify-content-center ">
+    <div class="row align-items-center gy-4">
+        <div class="col-md-auto ms-md-auto  ">
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrappinggg">
+                    <i class="fa-solid fa-calendar-days fa-flip da-2xl"></i>
+                </span>
+                <input type="text" class="form-control" placeholder="ค้นหาวันสิ้นสุด" aria-label="Username"
+                    aria-describedby="addon-wrapping" id="datepicker01">
+            </div>
+        </div>
+        <div class="col-md-auto ms-md-auto">
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">
+                    <i class="fa-solid fa-calendar-days fa-flip da-2xl"></i>
+                </span>
+                <input type="text" class="form-control" placeholder="ค้นหาวันเรื่มต้น" aria-label="Username"
+                    aria-describedby="addon-wrapping" id="datepicker">
+            </div>
+        </div>
+        <div class="col-md-auto ms-md-auto">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-warning me-md-2" type="">ค้นหา</button>
+                <button class="btn btn-info me-md-2" type="">รีเซต</button>
+                <!-- <div class="vr">|</div> -->
+                <div class="btn-group btn-group-md" role="group" aria-label="Large button group">
+                    <button type="button" class="btn btn-outline-secondary">Excel</button>
+                    <button type="button" class="btn btn-outline-secondary">Copy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>                    
+<div class="history-box">
+    <table id="example" class="table table-striped" >
+        <thead>
+            <tr>
+                <!-- <th>ลำดับ</th> -->
+                <th>ชื่อ-นามสกุล</th>
+                <th>ทะเบียนรถยนตร์</th>
+                <th>จังหวัด</th>
+                <th>วันเดินทาง</th>
+                <th>วันเดินทางกลับ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let datahitoyr of registerList  ; let inser = index">
+                <!-- <th>{{inser+1}}</th> -->
+                <td data-cell="ชื่อ-นามสกุล">
+                    <div>{{datahitoyr.carRegis}}</div>
+                </td>
+                <td data-cell="ทะเบียนรถยนตร์">
+                    <div>{{datahitoyr.driverName}}</div>
+                </td>
+                <td data-cell="จังหวัด">
+                    <div>{{datahitoyr.registerCounty}}</div>
+                </td>
+                <td data-cell="วันเดินทาง">
+                    <div>{{datahitoyr.startDate}}</div>
+                </td>
+                <td data-cell="วันเดินทางกลับ">
+                    <div>{{datahitoyr.endDate}}</div>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <!-- <th>ลำดับ</th> -->
+                <th>ชื่อ-นามสกุล</th>
+                <th>ทะเบียนรถยนตร์</th>
+                <th>จังหวัด</th>
+                <th>วันเดินทาง</th>
+                <th>วันเดินทางกลับ</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<table></table>

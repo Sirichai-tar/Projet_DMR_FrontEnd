@@ -1,0 +1,161 @@
+<!-- <div class="container-lg ">
+  <div class="employadd-bigbox">
+    <div class="employadd-inbox">
+      <div class="row ">
+
+        <form class="row g-1">
+          <div class="mb-6">
+
+            <div class="col ">
+              <label for="exampleInputText" class="form-label">ชื่อ-นามสกุล</label>
+              <input type="text"  placeholder="First name" aria-label="First name">
+              <input type="text"  placeholder="First name" aria-label="First name">
+            </div> -->
+<!-- <div class="col">
+              <input type="text" class="form-control" placeholder="Lsat name" aria-label="Last name">
+            </div> -->
+
+<!-- <label for="exampleInputEmail1" class="form-label">ชื่อ-นามสกุล</label> -->
+<!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
+<!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
+<!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+<!-- </div> -->
+<!-- <div class="col">
+
+            <input type="text"  placeholder="First name" aria-label="First name">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">เบอร์โทร</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3 form-check"> -->
+<!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
+<!-- <label class="form-check-label" for="exampleCheck1"></label> -->
+<!-- <a class="modal" data-bs-toggle = "Modal">แก้ไขข้อมูล</a> -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Launch demo modal
+            </button>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+
+      </div>
+
+    </div>
+  </div>
+</div> -->
+<p-toast></p-toast>
+<div class="employadd-text">
+  <h1>เพิ่มคนขับรถยนต์</h1>
+</div>
+<div class="boxon">
+  <div class="employadd-bigbox">
+    <div class="employadd-inbox">
+      <div class="container">
+        <div class="row g-3 ">
+          <!-- <label class="" >ชื่อ-นามสกุล</label> -->
+          <div class="col-6 g-3 ">
+            <label class="">ชื่อ-นามสกุล</label>
+            <!-- <label for="exampleFormControlInput1" class="form-label">Email address</label> -->
+            <div class="input-group input-group-mb  mb-3 flex-nowrap">
+
+              <input type="text" class="form-control" placeholder="ชื่อ" aria-label="Username"
+                [(ngModel)]="employaddsave.driverName">
+            </div>
+          </div>
+           <div class="col-6 g-3">
+            <label class=""></label>
+            <div class="input-group input-group-mb  mb-3 flex-nowrap">
+              <input type="text" class="form-control" placeholder="นามสกุล" aria-label="UserLsatname"
+                aria-describedby="addon-wrapping" [(ngModel)]="employaddsave.driverLastname">
+            </div>
+          </div> 
+          <div class="col-12">
+            <label class="">เบอร์โทร</label>
+            <div class="input-group input-group-mb  mb-0 flex-nowrap">
+              <!-- <span class="input-group-text" id="addon-wrapping">@</span> -->
+              <input type="text" class="form-control" placeholder="เบอร์โทร" aria-label="phon"
+                [(ngModel)]="employaddsave.phoneNumber">
+            </div>
+          </div>
+          <div class="d-grid gap-2 col-12 mx-auto">
+            <br>
+            <button class="btn btn-primary" type="button" (click)="save()">บันทึกข้อมูลใหม่</button>
+            <button class="btn btn btn-success" type="button" data-bs-target="#Modal02"
+              data-bs-toggle="modal">แก้ไข้ข้อมูลส่วนของพนักงานขับรถยนต์</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="Modal02" tabindex="-1" aria-labelledby="Modal02Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">ข้อมูลคนขับรถยนต์ </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped table-hover table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">ลำดับ</th>
+              <th scope="col">ชื่อ</th>
+              <th scope="col">นามสกุล</th>
+              <th scope="col">เบอร์โทร</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider">
+            <tr *ngFor="let listemployee of employaddDataList ; let oder = index">
+              <th scope="row">{{oder+1}}</th>
+              <td>
+                <div class="input-group input-group-sm mb-3 " *ngIf="listemployee.editStatusEmploy">
+                  <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" [(ngModel)]="listemployee.driverName">
+                </div>
+                <div *ngIf="!listemployee.editStatusEmploy">{{listemployee.driverName}}</div>
+              </td>
+              <td>
+                <div class="input-group input-group-sm mb-3" *ngIf="listemployee.editStatusEmploy">
+                  <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" [(ngModel)]="listemployee.driverLastname">
+                </div>
+                <div *ngIf="!listemployee.editStatusEmploy">{{listemployee.driverLastname}}</div>
+              </td>
+
+              <td>
+                <div class="input-group input-group-sm mb-3" *ngIf="listemployee.editStatusEmploy">
+                  <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" [(ngModel)]="listemployee.phoneNumber">
+                </div>
+                <div *ngIf="!listemployee.editStatusEmploy">{{listemployee.phoneNumber}}</div>
+              </td>
+
+              <td class="d-grid gap-3 d-md-flex justify-content-md-center">
+                <button type="button" class="btn btn-outline-primary btn-sm " (click)="edit(listemployee)"
+                  *ngIf="!listemployee.editStatusEmploy"><i class="fa-solid fa-user-pen">..แก้ไขข้อมูล</i></button>
+                <button type="button" class="btn btn-outline-success btn-sm" (click)="saveRecord(listemployee)"
+                  *ngIf="listemployee.editStatusEmploy"><i class="fa-solid fa-pen">..บันทึก</i></button>
+                <button type="button" class="btn btn-outline-danger" (click)="delete(listemployee.peopleId)"><i
+                    class="fa-solid fa-user-minus">..ลบข้อมูล</i></button>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary " data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-outline-primary" (click)="saveAll()">บันทึก</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="homemain">
+  <h1>หน้าหลักภาพรวม</h1>
+</div>
+<!-- <div class="container">
+  <div class="twobox-item ">
+    <div class="twobox-shadow ">
+      <div class="form-floating ">
+        <i class="fa-solid fa-user-plus fa-2xl"> </i>
+      </div>
+    </div>
+    <div class="twobox-shadow">
+      <div class="form-floating ">
+        <i class="fa-solid fa-car fa-2xl"> </i>
+        <div><h4>จำนวนรถคงเหลือ</h4></div>
+      </div>
+    </div>
+    <div id='calendar'></div>
+  </div> -->
+
+<!-- <div id='calendar'></div> -->
+
+<div class="container overflow-hidden text-center   ">
+  <div class="row justify-content-cente gx-2 ">
+    <div class="col">
+      <div class="p-4">
+        <div class="boxin">
+          <div class="inbox">
+            <div class="img-box">
+              <i class="fa-solid fa-user fa-2xl"></i>
+            </div>
+            <div class="text1">
+              <b>
+                <h1>9</h1>
+              </b>
+              <p style="font-size: 20px; color: black;">   {{dataListcouterregister.length}} จากททั่งหมด {{dataListcouteremploy.length}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="p-4">
+        <div class="boxin">
+          <div class="inbox">
+            <div class="img-box">
+              <i class="fa-solid fa-car fa-2xl"></i>
+              <!-- <img src="../assets/img/protection.png" alt=""> -->
+            </div>
+            <div class="text1">
+              <b>
+                <h1>9</h1>
+              </b>
+              <p style="font-size: 20px; color: black;">{{dataListcouterregister.length}} จากททั่งหมด {{dataListcoutercar.length}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="col-12">
+    <full-calendar [options]="calendarOptions" [events]="event"></full-calendar>
+    <!-- <div id='calendar'></div> -->
+  </div>
+</div>
+
+<!-- <div class="calendainbox">
+  <div id='calendar'></div>
+</div> -->
+
+<!-- <input type="text" pInputText pTooltip="Enter your username" tooltipPosition="bottom" placeholder="Bottom"> -->

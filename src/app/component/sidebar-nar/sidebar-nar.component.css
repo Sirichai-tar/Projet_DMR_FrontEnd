@@ -1,0 +1,224 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} 
+
+.logo-img{
+    width: 60px;
+    border-radius: 100%;
+    border: 1px solid #eee;   
+ }
+ 
+ 
+ .sidebar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80px;
+    background-color: #12171e;
+    padding: .4rem .8rem;
+    transition: all 0.5s ease;
+ }
+ 
+ .sidebar.active ~ .main-content{
+    left: 250px;
+    width: calc(100%-250px);
+ }
+ 
+ .sidebar.active{
+    width:  250px;
+ }
+ 
+ .sidebar #btn{
+    position: absolute;
+    color: #fff;
+    top: .4rem;
+    left: 50%;
+    font-size: 1.2rem;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+ }
+ 
+ .sidebar.active #btn{
+    left: 90%;
+ }
+ 
+ .sidebar .top .logo {
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100% ;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+ } */
+/* app-navbar{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    height: 5rem;
+    z-index: 2;
+}
+main{
+    position: absolute;
+    width: 100%;
+    top: 4rem;
+    z-index: 1;
+}
+sideber-nar{
+    position: absolute;
+    left: 0rem;
+    width: 250px;
+    height: calc(100vh-4rem);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
+    background-color: rgba(35, 34, 34, 1);
+    border-top: 1px solid white;
+}    
+  */
+/* *{
+font-family: 'Times New Roman', Times, serif;
+  } */
+.border-white {
+   border: 1px solid white;
+}
+
+.sideber-nav-content {
+   color: white;
+   width: 230px;
+   margin-left: px;
+   margin-right: px;
+   margin-top: px;
+}
+
+.nav-list {
+   list-style: none;
+   height: 100%;
+   padding: 5% 2%;
+   margin-bottom: 1%;
+
+}
+
+.nav-list-item {
+   display: flex;
+   align-items: center;
+   height: 70px;
+}
+
+.nav-list-open .nav-list-item:hover {
+   background-color: rgba(255, 255, 255, 0.3);
+   border-radius: 10px;
+}
+
+.nav-list-item i {
+   font-size: 20px;
+   height: 25px;
+   width: 25px;
+   /* margin-right: 15px; */
+   /* margin-left: 10px; */
+   /* text-align: center; */
+   line-height: 25px;
+}
+
+.nav-list-item span {
+   width: 120px;
+   text-transform: capitalize;
+   /* text-align: center; */
+   margin-left: 20px;
+}
+
+a {
+   text-decoration: none;
+   color: white;
+   margin: 10px 0rem;
+}
+
+.img {
+   width: 50px;
+   border-radius: 70px;
+   background-color: rgb(240, 245, 245);
+}
+
+.imgslibar {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 16rem;
+   height: 100px;
+   background-color: rgba(0, 0, 0, 0.87);
+   padding-right: 47px;
+   /* margin: 2rem 0; */
+   /* width: 40px; */
+   /* height: 50px; */
+   /* border-radius: 80px; */
+   /* background-color: aqua; */
+   /* width: auto; */
+
+
+   /* background-color: rgb(240, 245, 245); */
+   /* border: 1px solid white; */
+
+}
+
+
+.imgslibar img {
+   width: 45px;
+   height: 45px;
+   margin-right: 10px;
+   border-radius: 50%;
+}
+
+.imgslibar h5 {
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-size: 1rem;
+   font-weight: 600;
+   display: flex;
+   margin-top: 13px;
+   margin-left: 5px;
+   text-align: center;
+   opacity: 1;
+   /* background-color: rgb(176, 12, 12); */
+}
+
+.iconbutton {
+   /* border: 1px solid #fff; */
+   /* background: none; */
+   /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
+   /* background: #; */
+   border-radius: 5px;
+   width: px;
+   height: px;
+   align-items: center;
+   padding: 10px;
+   justify-content: center;
+   cursor: pointer;
+   margin: -1px;
+   -webkit-transition-duration: 0.3s;
+   transition-duration: 0.3s;
+   -webkit-transition-property: box-shodoe, transform;
+   transition-property: box-shodoe, transform;
+   
+}
+.iconbutton i{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-left: 10px;
+   color: white;
+}
+
+.iconbutton:hover i{
+   box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+   -webkit-transform: scale(1.2);
+   transform: scale(1.7);  
+}
+
+.btn-tooltip{
+   /* border: none; */
+   background-color: black;
+   position: relative;
+   display: flex;
+}

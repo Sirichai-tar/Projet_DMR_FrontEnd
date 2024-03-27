@@ -1,0 +1,111 @@
+<!-- <div class="sidebar">
+    <div class="top">
+          <div class="logo ">
+            <img src="../assets/img/DMR_Logo.png" alt="me" class="logo-img" >
+            <span>กรมทรัพธรณี</span>
+         </div>
+       <i class="bx bx-menu " id="btn"></i>
+    </div>
+    <div class="user">
+      <img src="../assets/img/DMR_Logo.png" alt="me" class="logo-img" >
+      <p class="bold">Home .T</p>
+      <p>tarpk</p>
+    </div>
+    <ul>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-house"></i>
+            <span class="nav-item">home</span>
+          </a>
+          <span title="tooltip">home</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-car"></i>
+            <span class="nav-item">Add-a-car</span>
+          </a>
+          <span title="tooltip">
+            Add-a-car</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-users"></i>
+            <span class="nav-item">
+              Add people</span>
+          </a>
+          <span title="tooltip">
+            Add people</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-registered"></i>
+            <span class="nav-item">
+              Register</span>
+          </a>
+          <span title="tooltip">
+            Register</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-file"></i>
+            <span class="nav-item">Car-history</span>
+          </a>
+          <span title="tooltip">Car-history</span>
+        </li>
+    </ul>
+  </div>
+  <div class="main-content">
+      <div class="container">
+        <h1> กรมทรัพธรณี</h1>
+      </div>
+  </div>
+  
+  <script>
+  let btn = document.querySelector('#btn');
+  
+  let sidebar = document.querySelector('.sidebar');
+  
+ 
+  btn.onclick = function () {
+    
+    sidebar.classList.toggle('active');
+  };
+  </script>
+     -->
+
+<div class="sideber-nav-content">
+  <div class="imgslibar">
+    <img src="../assets/img/DMR_Logo.png" class="img" alt="">
+    <!-- <img src="https://data.dmr.go.th/uploads/admin/2023-06-27-153016.087397dmr-1000--600px.png" alt=""> -->
+    <div style="font-family: 'Times New Roman', Times, serif; text-align: start;">
+      <b>
+        <u> <h5>กรมทรัพยากรธรณี</h5></u>
+    </b>
+    </div>
+    <!-- <img src="../assets/img/DMR_Logo.png" class="img" alt=""> -->
+  </div>
+
+  <!-- <img src="../assets/img/DMR_Logo.png"  alt=""> -->
+  <!-- <h5 class="text-DMR">กรมทรัพยากรธรณ์</h5> -->
+
+  <ul class="nav-list" [ngClass]="{'nav-list-open':sidebarNarStatus}">
+    <li class="nav-list-item " *ngFor="let item of list">
+      <!-- <div class="side-nav-button p-2 me-3 text-light"><i class="{{item.icon}}"></i></div> -->
+        <a href="{{item.rount}}">
+          <a class="iconbutton" pInputText pTooltip="{{item.name}}" tooltipPosition="right" placeholder="Right">
+            <!-- <span class="d"></span> -->
+            <a data-bs-toggle="tooltip" data-bs-title="">
+              <i class="{{item.icon}}" (click)="seticon(item.icon)"></i></a>
+            <!-- <i class="{{item.icon}}"  (click)="seticon(item.icon)"></i> -->
+          </a>
+        </a>
+      <!-- <i class="{{item.icon}}" [class]></i> -->
+      <span>
+        <a href="{{item.rount}}" (click)="setNavbar(item.number)">{{item.name}} </a>
+      </span>
+    </li>
+  </ul>
+</div>
+
+
+

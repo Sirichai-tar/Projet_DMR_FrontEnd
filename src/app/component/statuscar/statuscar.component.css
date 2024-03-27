@@ -1,0 +1,69 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&display=swap'); */
+*{
+    /* margin: 0; */
+    /* padding: 0; */
+    box-sizing: border-box;
+    font-family: Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol;
+}
+
+
+.boxstatuscar {
+    /* padding: 10px; */
+    /* background-color: red; */
+    
+    /* text-align: center; */
+} 
+.inboxstatus{
+     /* display: flex;  */
+     /* justify-content: center;  */
+    /* align-self: center;  */
+    /* width: 60vw; */
+    /* margin-left: 450px; */
+    /* padding-top: 100px; */
+    /* text-align: center; */
+}
+ .inboxstatus .td .tr .th{
+    text-align: center;
+    /* margin-top: 10px; */
+} 
+
+table{
+    
+    width: 100%;
+    /* margin-left: 10px; */
+    /* width: 60rem; */
+    /* height: 10rem; */
+    
+    /* border-radius: 40px 40px; */
+    background-color:cover;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-collapse: collapse;
+    text-align: center;
+    z-index: 10px;
+    
+} 
+.texthead{
+    padding-top: 70px;
+    padding-left: 70px;
+}
+.tablebox{
+    /* background-color: red; */
+    padding-top: 35px;
+    padding: 60px 70px;
+    
+}
+
+@media (max-widt: 750px) {
+    th{
+        display: none;
+    }
+    
+    td{
+        display: block;
+    }
+    
+}
+
+
+ 

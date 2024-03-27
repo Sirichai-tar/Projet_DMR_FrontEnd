@@ -1,0 +1,151 @@
+<p-toast></p-toast>
+
+<div class="caradd-text">
+  <h1>เพิ่มทะเบียนรถยนต์</h1>
+</div>
+<div class="container">
+
+  <div class="caradd-boxin">
+    <div class="cartext">
+      <form class="row g-2">
+        <div class="mb-3">
+          <!-- <p-toast></p-toast> -->
+          <!-- <button type="button" pButton pRipple (click)="show()" label="Show" class="btn btn-success"></button> -->
+          <!-- <label for="exampleInputEmail1" class="form-label">ทะเบียนรถยนตร์</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="carregisData.carRegis"
+            name="carRegis" /> -->
+
+          <label for="basic-url" class="form-label">ทะเบียนรถยนตร์</label>
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon3">ทะเบียน</span>
+            <input type="text" class="form-control" [(ngModel)]="carregisData.carRegis" name="carRegis">
+          </div>
+
+
+        </div>
+
+        <div class="mb-3">
+          <!-- <label for="exampleInputPassword1" class="form-label">ลักษณะรถยนตร์</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="carregisData.carNature"
+            name="carNature" /> -->
+          <label for="basic-url" class="form-label">ลักษณะรถยนตร์</label>
+
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon3">ลักษณะ</span>
+            <input type="text" class="form-control" [(ngModel)]="carregisData.carNature" name="carNature">
+          </div>
+
+
+        </div>
+        <!-- <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div> -->
+        <br>
+
+        <div class="mb-3">
+          <label for="basic-url" class="form-label">ยี่ห้อรถยนต์</label>
+          <div class="input-group mb-3">
+
+            <label class="input-group-text" for="inputGroupSelect01">ยี่ห้อ</label>
+            <select class="form-select" id="inputGroupSelect01" [(ngModel)]="carregisData.carType" name="carType">
+              <option selected>...เลือก...</option>
+              <option>นิสัน</option>
+              <option>โตโยต้า</option>
+              <option>มิซูมิชิ</option>
+            </select>
+          </div>
+          <!-- <label for="exampleInputEmail1" class="form-label">ยี่ห้อรถยนต์</label> -->
+          <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
+          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+        <div class="d-grid gap-2 col-12 mx-auto ">
+          <button type="button" class="btn btn-success" (click)="save()">บันทึก</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#modify">แก้ไข้ข้อมูล</button>
+        </div>
+        <!-- <div class="d-grid gap-2 col-6 mx-auto col-4">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modify">แก้ไข้ข้อมูล</button>
+        </div> -->
+        <!-- <div class="col-4">
+          <button type="submit" class="btn btn-primary">ลบข้อมูล</button>
+        </div> -->
+      </form>
+      <!-- <div class="input-group md-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div> -->
+      <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+      <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+      <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modify" tabindex="-1" aria-labelledby="modifyLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-4" id="exampleModalLabel">ข้อมูลรถยนต์</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover  table-striped table-bordered ">
+          <thead  class="table-dark">
+            <tr>
+              <th class="ta" scope="col">ลำดับ</th>
+              <th scope="col">ทะเบียนรถยนตร์</th>
+              <th scope="col">ลักษณะรถยนตร์</th>
+              <th scope="col">ยี่ห้อรถยนต์</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider">
+            <tr *ngFor="let user of carregisDataList ; let Nosr = index">
+              <th  class="ta"  scope="row">{{Nosr+1}}</th>
+              <!-- <th scope="row">{{user.carId}}</th> -->
+
+              <td>
+                <div class="input-group input-group-sm mb-3" *ngIf="user.editStatus">
+                  <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" [(ngModel)]="user.carRegis">
+                </div>
+                <div *ngIf="!user.editStatus">{{user.carRegis}}</div>
+              </td>
+
+              <td>
+                <div class="input-group input-group-sm mb-3 " *ngIf="user.editStatus">
+                  <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" [(ngModel)]="user.carNature">
+                </div>
+                <div *ngIf="!user.editStatus">{{user.carNature}}</div>
+              </td>
+
+              <td>
+                <div class="input-group input-group-sm mb-3" *ngIf="user.editStatus">
+                  <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" [(ngModel)]="user.carType">
+                </div>
+                <div *ngIf="!user.editStatus">{{user.carType}}</div>
+              </td>
+
+              <td>
+                <div class="btn-group btn-group-sm d-md-flex justify-content" role="group" aria-label="Default button group">
+                  <button type="button" class="btn btn-outline-primary " (click)="edit(user)" *ngIf="!user.editStatus">แก้ไข้ข้อมูล</button>
+                  <button type="button" class="btn btn-outline-success" (click)="saveRecord(user)"  *ngIf="user.editStatus">บันทึกข้อมูล</button>
+                  <button type="button" class="btn btn-outline-danger" (click)="delete(user.carId)">ลบข้อมูล</button>
+                </div>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="saveAll()"> บันทึกทั้งหมด</button>
+      </div>
+    </div>
+  </div>
+</div>

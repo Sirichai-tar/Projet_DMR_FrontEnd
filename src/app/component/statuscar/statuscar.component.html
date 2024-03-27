@@ -1,0 +1,177 @@
+<!-- <div class="texthead">
+    <h1>เช็คสถานะรถยนต์</h1>
+</div>
+<div class="inboxstatus">
+    <table id="example" class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>ลำดับ</th>
+                <th>ทะเบียนรถยนตร์</th>
+                <th>ชื่อ-นามสกุล</th>
+                <th>วันที่่เริ่มการเดินทาง-วันที่สิ้นสุดการเดินทาง</th>
+                <th>สถานะรถยนตร์</th>
+                <th>ดูข้อมูล</th>
+                <th>แก้ไขข้อมูล</th>
+                <th>ลบข้อมูล</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of registerDataList ; let sr = index" >
+                <td>{{sr + 1}}</td>
+                <td>{{item.carRegis}}</td>
+                <td>tuo mato</td>
+                <td>20-2-56 ถึง 30-3-56</td>
+                <td><i class="fa-solid fa-circle fa-xl" style="color: #63E6BE;"></i></td>
+                <td><button  type="button" class="btn btn-warning">ดูข้อมูล</button></td>
+                <td><button type="button" class="btn btn-primary">แก้ไขข้อมูล</button></td>
+                <td><button  type="button" class="btn btn-danger">ลบข้อมูล</button></td>
+            </tr>
+        <tfoot>
+            <tr>
+                <th>ลำดับ</th>
+                <th>ชื่อ-นามสกุล</th>
+                <th>ทะเบียนรถยนตร์</th>
+                <th>วันที่่เริ่มการเดินทาง-วันที่สิ้นสุดการเดินทาง</th>
+                <th>สถานะรถยนตร์</th>
+                <th>ดูข้อมูล</th>
+                <th>แก้ไขข้อมูล</th>
+                <th>ลบข้อมูล</th>
+            </tr>
+        </tfoot>
+    </table>
+    
+</div> -->
+
+
+<div class="texthead">
+    <h1>เช็คสถานะรถยนต์</h1>
+</div>
+<div class="tablebox">
+<div class="table-responsive-sm" style="height: auto;" >
+    <table class="table table-sm table-bordered  table-striped ">
+        <thead class=" table-dark">
+            <tr>
+            <th scope="col">ลำดับ</th>
+            <th scope="col">ทะเบียนรถยนตร์</th>
+            <th scope="col">ชื่อ-นามสกุล</th>
+            <th scope="col">วันที่่เริ่มการเดินทาง - วันที่สิ้นสุดการเดินทาง</th>
+            <th scope="col">สถานะรถยนตร์</th>
+            <th scope="col">ดูข้อมูล</th>
+            <th scope="col">แก้ไขข้อมูล/ลบข้อมูล</th>
+            <!-- <th scope="col">ลบข้อมูล</th> -->
+        </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr *ngFor="let data of dataList  ; let OnSr = index">
+                <th scope="row">{{OnSr+1}}</th>
+                <td >
+                    <div>{{data.carRegis}}</div>
+                </td>
+                <td>
+                    <div>{{data.driverName}}</div>
+                </td>
+                <td>
+                    <div *ngIf="data.driverName">{{data.startDate}} --ถึง-- {{data.endDate}}</div>
+                    <div></div>
+                </td>
+
+                <td>
+                    <div></div>
+                </td>
+                <td>
+                    <div class="btn-group ">
+                        <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal"
+                            (click)="setView(data)" [disabled]="!data.driverName" data-bs-target="#view"><i
+                                class="fa-solid fa-eye"></i>
+                            <h6>ดูข้อมูล</h6>
+                        </button>
+
+                        <!-- <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-eye">ดูข้อมูล</i></button> -->
+                        <!-- <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-eye">ดูข้อมูล</i></button> -->
+                    </div>
+                </td>
+                <td>
+                    <div class="btn-group g-2">
+                        <!-- <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-eye">ดูข้อมูล</i></button> -->
+                        <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-marker"></i>
+                            <h6>แก้ไขข้อมูล</h6>
+                        </button> <br>
+                        <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa-solid fa-trash"></i>
+                            <h6>ลบข้อมูล</h6>
+                        </button>
+                    </div>
+                    <!-- <div class="btn-group">
+                            <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-eye">ดูข้อมูล</i></button>
+                        </div> -->
+                </td>
+
+            </tr>
+        </tbody>
+        <tfoot>
+            <th scope="col">ลำดับ</th>
+            <th scope="col">ทะเบียนรถยนตร์</th>
+            <th scope="col">ชื่อ-นามสกุล</th>
+            <th scope="col">วันที่่เริ่มการเดินทาง - วันที่สิ้นสุดการเดินทาง</th>
+            <th scope="col">สถานะรถยนตร์</th>
+            <th scope="col">ดูข้อมูล</th>
+            <th scope="col">แก้ไขข้อมูล/ลบข้อมูล</th>
+            <!-- <th scope="col">ลบข้อมูล</th> -->
+        </tfoot>
+    </table>
+</div>
+</div>
+
+
+
+<div class="modal fade" id="view" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="view" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="view">ดูข้อมูลการจองรถยนต์</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container overflow-hidden ">
+                    <div class="row gy-4">
+                        <div class="col-5">
+                            <div class="p-2"><b>ชื่อ-นามสกุล :</b></div>
+                        </div>
+                        <div class="col-7">
+                            <div class="p-2">{{ display.fullName }}</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="p-2"><b>เบอร์โทร :</b></div>
+                        </div>
+                        <div class="col-7">
+                            <div class="p-2">{{ display.telphone }}</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="p-2"><b>ทะเบียนรถยนตร์ :</b></div>
+                        </div>
+                        <div class="col-7">
+                            <div class="p-2">{{ display.carRegis }}</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="p-2"><b>ลักษณะรถยนตร์ :</b></div>
+                        </div>
+                        <div class="col-7">
+                            <div class="p-2">{{ display.typeCar }}</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="p-2"><b>ยี่ห้อรถยนต์ :</b></div>
+                        </div>
+                        <div class="col-7">
+                            <div class="p-2">{{ display.car }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Understood</button>
+            </div> -->
+        </div>
+    </div>
+</div>
+

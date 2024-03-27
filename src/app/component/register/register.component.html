@@ -1,0 +1,135 @@
+<!-- <div class="contrainer-reginter">
+    <div class="logo-peson">
+            <i class="fa-solid fa-user-plus"></i>
+            <div class="dropdown">
+                <i class="fa-solid fa-user-plus"></i>
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </button>
+                <ul class="dropdown-menu">
+                  <li><button class="dropdown-item" type="button">Action</button></li>
+                  <li><button class="dropdown-item" type="button">Another action</button></li>
+                  <li><button class="dropdown-item" type="button">Something else here</button></li>
+                  <li><button class="dropdown-item" type="button">Action</button></li>
+                  <li><button class="dropdown-item" type="button">Another action</button></li>
+                  <li><button class="dropdown-item" type="button">Something else here</button></li>
+                  <li><button class="dropdown-item" type="button">Action</button></li>
+                  <li><button class="dropdown-item" type="button">Another action</button></li>
+                  <li><button class="dropdown-item" type="button">Something else here</button></li>
+                  <li><button class="dropdown-item" type="button">Action</button></li>
+                  <li><button class="dropdown-item" type="button">Another action</button></li>
+                  <li><button class="dropdown-item" type="button">Something else here</button></li>
+                </ul>
+              </div>
+        <div></div>
+    </div>
+    <div class="logo-car">
+        
+    </div>
+</div> -->
+<!-- <pre> {{ "Carregis"}}</pre> -->
+<p-toast></p-toast>
+<h1>ลงทะเบียนเลือกรถยนต์</h1>
+<div class="container">
+  <div class="box">
+    <label class="col-ls-4">
+      คนขับรถยนตร์
+    </label>
+
+    <div class="input-group mb-3">
+      <label class="input-group-text" for="inputGroupSelect01"><i class="fa-solid fa-user"></i></label>
+      <select class="form-select" id="inputGroupSelect01" [(ngModel)]="employaddData.peopleId" name="driverName">
+        <option selected>เลือกคนขับรถต์</option>
+        <ng-container *ngFor="let item of employaddDataList ">
+          <option *ngIf="!item.driverStatus" [value]="item.peopleId">{{item.driverName + " " +item.driverLastname }} </option>
+        </ng-container>
+      </select>
+    </div>
+    <br>
+    <label class="col-ls-4">เลือกรถยนตร์ </label>
+    <div class="input-group mb-3">
+      <label class="input-group-text" for="inputGroupSelect02"><i class="fa-solid fa-car"></i></label>
+      <select class="form-select" id="inputGroupSelect02" [(ngModel)]="carregisData.carId" name="carRegis">
+        <option  selected>เลือกทะเบียนรถต์</option>
+        <ng-container *ngFor="let item of carregisDataList">
+          <option *ngIf="!item.carStatus" [value]="item.carId">{{ item.carRegis }}</option>
+        </ng-container>
+      </select>
+    </div>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="findSearch()">
+      ตกลง
+    </button>
+
+  </div>
+</div>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" tabindex="-1" id="exampleModal">
+  <div class="modal-dialog  modal-dialog-centered ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title t = center">กรอกข้อมูลดังกล่าว</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ">
+        <div class="row md-2 p-2">
+          <div class="row g-3">
+
+            <div class="col-md-6 ">
+              <!-- <label for="inputEmail4" class="form-label ">ชื่อ-นามสกุล</label> -->
+              <span>ชื่อ-นามสกุล</span>
+              <input type="text" class="form-control" id="inputEmail4" placeholder="" disabled
+                [(ngModel)]="employaddData.driverFullName" name="driverName">
+            </div>
+            <div class="col-md-6">
+              <!-- <label for="inputPassword4" class="form-label">ทะเบียนรถยนตร์</label> -->
+              <span>ทะเบียนรถยนตร์</span>
+              <input type="text" class="form-control" id="inputGroupSelect01" placeholder="" disabled
+                [(ngModel)]="carregisData.carRegis" name="carRegis">
+            </div>
+            <div class="col-md-6">
+              <!-- <label for="" class="form-label">ต่างจังหวัดหรือกรุงเทพฯ</label> -->
+              <span>ต่างจังหวัดหรือกรุงเทพฯ</span>
+              <select id="inputState" class="form-select" [(ngModel)]="registerData.registerArea" name="registerArea">
+                <option selected>เลือก</option>
+                <option>ต่างจังหวัด</option>
+                <option>กรุงเทพฯ</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <!-- <label for="inputZip" class="form-label">ใส่จังหวัด/ปริมณฑล</label> -->
+              <span>ใส่จังหวัด/ปริมณฑล</span>
+              <input type="text" class="form-control" id="inputZip" [(ngModel)]="registerData.registerCounty"
+                name="registerCounty">
+            </div>
+            <div class="col-md-6">
+              <!-- <label for="inputZip" class="form-label">วันที่่เริ่มการเดินทาง</label> -->
+              <span>วันที่่เริ่มการเดินทาง</span>
+              <input type="date" class="form-control" id="startDat" [(ngModel)]="registerData.startDate"
+                name="startDate">
+            </div>
+            <div class=" col-md-6">
+              <!-- <label for="inputZip" class="form-label">วันที่่สิ้นสุดการเดินทาง</label> -->
+              <span>วันที่่สิ้นสุดการเดินทาง</span>
+              <input type="date" class="form-control" id="endDat" [(ngModel)]="registerData.endDate" name="endDate">
+            </div>
+            <div>
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" (click)="save()">บันทึก</button>
+          <!-- <button type="button" class="btn btn-success" (click)="status()">บันทึกสถานะ</button> -->
+          <!-- <button type="button" class="btn btn-danger">ลบข้อมูล</button> -->
+          <!-- <button type="button" class="btn btn-primary">แก้ไข้ข้อมูล</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
